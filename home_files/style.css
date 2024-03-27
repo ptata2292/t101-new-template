@@ -21967,6 +21967,13 @@ html[dir=rtl] .choices__input {
   color: var(--bs-gray-900) !important;
 }
 
+.form-control-border .input {
+  margin-top: -1.2rem;
+  padding-top: 1rem !important;
+  padding-bottom: 0.8rem !important;
+  color: var(--bs-gray-900) !important;
+}
+
 .form-control-bg-light .flatpickr {
   border: 1px solid transparent;
   background: var(--bs-light) !important;
