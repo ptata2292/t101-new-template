@@ -64,16 +64,16 @@ Main Content START -->
 								<p class="mb-0">New here?<a href="signup.html"> Create an account</a></p>
 		
 								<!-- Form START -->
-								<form class="mt-4 text-start" action="sneat/html/index.html">
+								<form class="mt-4 text-start" >
 									<!-- Email -->
 									<div class="mb-3">
 										<label class="form-label">Enter email id</label>
-										<input type="email" class="form-control">
+										<input type="email" class="form-control" id="email">
 									</div>
 									<!-- Password -->
 									<div class="mb-3 position-relative">
 										<label class="form-label">Enter password</label>
-										<input class="form-control fakepassword" type="password" id="psw-input">
+										<input class="form-control fakepassword" type="password" id="psw">
 										<span class="position-absolute top-50 end-0 translate-middle-y p-0 mt-3">
 											<i class="fakepasswordicon bi bi-eye cursor-pointer p-2"></i>
 										</span>
@@ -87,7 +87,7 @@ Main Content START -->
 										<a href="#">Forgot password?</a>
 									</div>
 									<!-- Button -->
-									<div><button type="submit" class="btn btn-primary w-100 mb-0">Login</button></div>
+									<div><button type="button" class="btn btn-primary w-100 mb-0" onclick="login()">Login</button></div>
 		
 									<!-- Divider -->
 									<div class="position-relative my-4">
@@ -113,7 +113,85 @@ Main Content START -->
 </section>
 <!-- =======================
 Main Content END -->
+<script>
+	async function login() {
+		let email = document.getElementById('email').value
+		console.log(email)
+		let password = document.getElementById('psw').value
+		console.log(password)
 
+		let data = {
+			"email": "majo@striano.io",
+			"password": "Striano2024!"
+			}
+
+		// let url = 'https://t101api.azurewebsites.net/User/getAll'
+		// fetch(url, {
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 		'access-control-allow-origin': '*',
+		// 		'accept': '*/*'
+		// 	},
+		// 	})
+		// 	.then(response => response.json())
+		// 	.then(data => console.log(data))
+		// 	.catch(error => console.log(error))
+
+		try {
+			const response = await fetch("https://t101api.azurewebsites.net/User/login", {
+			method: "POST", 
+			headers: {
+				'Accept': 'application/json, text/plain, /',
+				'Accept-Encoding': 'gzip, deflate, br, zstd',
+				'Accept-Language': 'es-ES,es;q=0.9,en;q=0.8',
+				'Authorization': 'Bearer',
+				'Connection': 'keep-alive',
+				'Content-Length': '94',
+				'Content-Type': 'application/json',
+				'Host':'t101api.azurewebsites.net',
+				'Origin':'http://localhost:5173',
+				'Referer':'http://localhost:5173/',
+				'Sec-Ch-Ua-Mobile':'?0',
+				'Sec-Ch-Ua-Platform':"Windows",
+				'Sec-Fetch-Dest':'empty',
+				'Sec-Fetch-Mode':'cors',
+				'Sec-Fetch-Site':'cross-site',
+				'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36'
+			},
+			body: JSON.stringify(data),
+			});
+
+			const result = await response.json();
+			console.log("Success:", result);
+		} catch (error) {
+			console.error("Error:", error);
+		}
+
+		// let url = 'https://t101api.azurewebsites.net/User/login'
+		// fetch(url, {
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 		'access-control-allow-origin': '*',
+		// 		'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+		// 	},
+		// 	body: {
+		// 	"email": email,
+		// 	"password": password
+		// 	},
+		// 	})
+		// 	.then(response => response.json())
+		// 	.then(data => {
+		// 		localStorage.setItem('userData', data)
+		
+		// 		let local = localStorage.getItem('userData')
+
+		// 		console.log(local)
+
+		// 		location.href ="home.html";
+		// 	})
+		// 	.catch(error => console.log(error))
+	}
+</script>
 </main>
 <!-- **************** MAIN CONTENT END **************** -->
 
