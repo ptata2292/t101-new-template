@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0045)list.html.html -->
+<!-- saved from url=(0045)home.html.html -->
 <html lang="en" data-bs-theme="light"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>Travel 101</title>
 
@@ -15,25 +15,31 @@
 	<!-- Google Font -->
 	<link rel="preconnect" href="https://fonts.googleapis.com/">
 	<link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-	
+	<link rel="stylesheet" href="https://t101-new-template.vercel.app/home_files/css2">
+
 	<!-- Plugins CSS -->
-	<link rel="stylesheet" type="text/css" href="./home_files/all.min.css">
-	<link rel="stylesheet" type="text/css" href="./home_files/bootstrap-icons.css">
-	<link rel="stylesheet" type="text/css" href="./home_files/flatpickr.min.css">
-	<link rel="stylesheet" type="text/css" href="./home_files/choices.min.css">
-	<link rel="stylesheet" type="text/css" href="./home_files/tiny-slider.css">
-	<link rel="stylesheet" type="text/css" href="./home_files/nouislider.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/all.min.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/flatpickr.min.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/choices.min.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/tiny-slider.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/nouislider.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 	<!-- Theme CSS -->
-	<link rel="stylesheet" type="text/css" href="./home_files/style.css">
+	<link rel="stylesheet" type="text/css" href="https://t101-new-template.vercel.app/home_files/style.css">
 
 <style></style></head>
 
-<body>
+<body style="background-color: #f5f5f9;">
 <!-- Header START -->
 <header class="navbar-light header-sticky">
 	<!-- Logo Nav START -->
-	<nav class="navbar navbar-expand-xl" style="height: 30px;">
+	<nav class="navbar navbar-expand-xl" style="height: 30px; background-color: #f5f5f9;">
 		<div class="container">
 			
 		</div>
@@ -83,7 +89,7 @@ Main Banner START -->
 							<!-- Date input -->
 							<div class="form-control-border form-control-transparent form-fs-md">
 								<label class="form-label">Check in - out</label>
-								<input type="text" class="form-control flatpickr flatpickr-input" data-mode="range" placeholder="Select date" value="19 Sep to 28 Sep" readonly="readonly">
+								<input type="text" class="form-control flatpickr flatpickr-input" data-mode="range" id="check-in" placeholder="Select date" value="07 Aug to 08 Aug" readonly="readonly">
 							</div>
 						</div>
 					</div>
@@ -97,7 +103,7 @@ Main Banner START -->
 							<div class="w-100">
 								<label class="form-label">Guests &amp; rooms</label>
 								<div class="dropdown guest-selector me-2">
-									<input type="text" class="form-guest-selector form-control selection-result" value="2 Guests 1 Room" id="dropdownShare" data-bs-auto-close="outside" data-bs-toggle="dropdown">
+									<input type="text" class="form-guest-selector form-control selection-result" id="room" value="1 Guests 1 Room" id="dropdownShare" data-bs-auto-close="outside" data-bs-toggle="dropdown">
 								
 									<!-- dropdown items -->
 									<ul class="dropdown-menu guest-selector-dropdown" aria-labelledby="dropdownShare">
@@ -255,7 +261,7 @@ Hotel list START -->
 										</div>
 									</div>
 									<!-- Collapse button -->
-									<a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="list.html#hotelType" role="button" aria-expanded="false" aria-controls="hotelType">
+									<a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="hotelType">
 										See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="bi bi-chevron-down ms-2"></i>
 									</a>
 								</div>
@@ -458,7 +464,7 @@ Hotel list START -->
 										</div>
 									</div>
 									<!-- Collapse button -->
-									<a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="list.html#amenitiesCollapes" role="button" aria-expanded="false" aria-controls="amenitiesCollapes">
+									<a class="p-0 mb-0 mt-2 btn-more d-flex align-items-center collapsed" data-bs-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="amenitiesCollapes">
 										See <span class="see-more ms-1">more</span><span class="see-less ms-1">less</span><i class="bi bi-chevron-down ms-2"></i>
 									</a>
 								</div>
@@ -504,30 +510,107 @@ Footer END -->
 
 <script>
 	let local = localStorage.getItem('locationHotel')
-	console.log(local)
+	let dataInfo = []
 	document.getElementById('location').value = local
-	let url = 'https://lpa-hotel-2445583353637.production.gw.apicast.io:443/api/v2/hotel?city='+local+'&state=FL&country=US&distance=10&distanceunit=M'
+		// let url = 'https://lpa-hotel-2445583353637.production.gw.apicast.io:443/api/v2/hotel?city='+local+'&state=FL&country=US&distance=10&distanceunit=M'
+		let url = 'https://hotel-api-2445583353637.production.gw.apicast.io/api/v2/hotel?city='+local+'&state=FL&country=US&distance=15&distanceunit=M'
 		fetch(url, {
 			headers: {
 				"Content-Type": "application/json",
 				'access-control-allow-origin': '*',
-				'api_key': '4c64cb18ef027bf6dec190b2006d0fe8'
+				'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+				// 'api_key': '4c64cb18ef027bf6dec190b2006d0fe8'
 			},
 			})
 			.then(response => response.json())
-			.then(data => mostrarData(data))
+			.then(data => {
+				dataInfo = data
+				let dataDescription = []
+				let dataOffert = []
+				let length2 = data.length > 5 ? 5 : data.length
+				for (let i = 0; i < length2; i++) {
+					data[i].cost = null
+					data[i].url = null
+					data[i].order = i
+					let d = {
+							"chainCode": data[i].basicPropertyInfo.chainCode,
+							"facilityCode": data[i].basicPropertyInfo.code,
+							"brandCode": data[i].basicPropertyInfo.brandCode
+							}
+					dataDescription.push(d)
+					dataOffert.push(data[i].basicPropertyInfo)
+				}
+				
+				let baseHospitalityFacilityQuery =  {
+					"dateTimeSpan": {
+						"start": "2024-08-10",
+						"end": "2024-08-12"
+					},
+					"guestCount": [
+						{
+							"ageQualifyingCode": "ADULT",
+							"value": "1"
+						}
+					],
+					"numberOfRooms": 1
+				}
+				let urlDescription = 'https://hotel-api-2445583353637.production.gw.apicast.io:443/api/v2/hotel/description'
+				let urlOffert = 'https://hotel-api-2445583353637.production.gw.apicast.io/api/v2/hotel/offers'
+				fetch(urlDescription, {
+					headers: {
+						"Content-Type": "application/json",
+						'access-control-allow-origin': '*',
+						'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+						// 'api_key': '4c64cb18ef027bf6dec190b2006d0fe8'
+					},
+					method: "POST",
+					body: JSON.stringify({ hotelDescriptionRQArray: dataDescription }),
+					})
+					.then(response => response.json())
+					.then(data2 => {
+						for (let i = 0; i < length2; i++) {
+							data[i].url = data2[i].multimediaCollection.multimedia.length > 0 ? data2[i].multimediaCollection.multimedia[0].imageCategory.image[0].url : './list_files/5.jpg'
+							data[i].url2 = data2[i].multimediaCollection.multimedia.length > 0 ? data2[i].multimediaCollection.multimedia : null
+						}
+						fetch(urlOffert, {
+							headers: {
+								"Content-Type": "application/json",
+								'access-control-allow-origin': '*',
+								'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+								// 'api_key': '4c64cb18ef027bf6dec190b2006d0fe8'
+							},
+							method: "POST",
+							body: JSON.stringify({ basicPropertyInfo: dataOffert, baseHospitalityFacilityQuery: baseHospitalityFacilityQuery}),
+							})
+							.then(response => response.json())
+							.then(data3 => {
+								console.log(data3.offers)
+								for (let i = 0; i < length2; i++) {
+									let codeOffert = data3.offers.find(x=> x.facilityIdentifier.facilityKey.facilityCode === data[i].basicPropertyInfo.code)
+									if (codeOffert) {
+										console.log(codeOffert)
+										data[i].cost = codeOffert
+									}									
+								}
+								mostrarData(data, data2)
+							})	
+					})
+				// mostrarData(data)
+			})
 			.catch(error => console.log(error))
 
-			const mostrarData = (data) => {
-				console.log(data)
+			const mostrarData = (data, data2) => {
 				let body = ''
-				let length = data.length > 10 ? 10 : data.length
-				for (let i = 0; i < length; i++) {
+				let mostrar = data.filter(x=> x.cost)
+				console.log(mostrar)
+				let length = data.length > 5 ? 5 : data.length
+				for (let i = 0; i < mostrar.length; i++) {
+					console.log(mostrar[i].url2)
 					body += `<div class="card shadow p-2">
 						<div class="row g-0">
 							<!-- Card img -->
 							<div class="col-md-5">
-								<img src="./list_files/${i+1}.jpg" class="card-img rounded-2" alt="Card image">
+								<a href="#" data-toggle="modal" data-target="#exampleModal${i}"><img src="${mostrar[i].url}" alt="Card image"></a>
 							</div>
 
 							<!-- Card body -->
@@ -545,15 +628,15 @@ Footer END -->
 									</div>
 
 									<!-- Title -->
-									<h5 class="card-title mb-1"><a href="booking.html">${data[i].basicPropertyInfo.name}</a></h5>
-									<small><i class="bi bi-geo-alt me-2"></i>${data[i].location.address.street} - ${data[i].location.address.city} - ${data[i].location.address.postalCode}</small>
+									<h5 class="card-title mb-1"><a href="booking3.html">${mostrar[i].basicPropertyInfo.name}</a></h5>
+									<small><i class="bi bi-geo-alt me-2"></i>${mostrar[i].location.address.street} - ${mostrar[i].location.address.city} - ${mostrar[i].location.address.postalCode}</small>
 									<!-- Amenities -->
 									<ul class="nav nav-divider mt-3">
 										<li class="nav-item">Air Conditioning</li>
 										<li class="nav-item">Wifi</li>
 										<li class="nav-item">Kitchen</li>
 										<li class="nav-item">Pool</li>
-										<li class="nav-item"><a href="list.html#" class="mb-0 text-primary">More+</a></li>
+										<li class="nav-item"><a href="home3.html#" class="mb-0 text-primary">More+</a></li>
 									</ul>
 
 									<!-- List -->
@@ -567,47 +650,101 @@ Footer END -->
 									<div class="d-sm-flex justify-content-sm-between align-items-center mt-3 mt-md-auto">
 										<!-- Button -->
 										<div class="d-flex align-items-center">
-											<h5 class="fw-bold mb-0 me-1">$${Number(data[i].relativePosition.distance) * 100}</h5>
+											<h5 class="fw-bold mb-0 me-1">$${mostrar[i].cost.totalPrice.total.value}</h5>
 											<span class="mb-0 me-2">/day</span>
 										</div>
 										<!-- Price -->
 										<div class="mt-3 mt-sm-0">
-											<a href="booking.html" class="btn btn-sm btn-primary mb-0 w-100">Select Room</a>    
+											<a href="#" onclick="verBooking(${mostrar[i].order})" class="btn btn-sm btn-primary mb-0 w-100">Select Room</a>    
 										</div>                  
 									</div>
 								</div>
 							</div>
 						</div>
-					</div>`
+					</div>
+					
+					<div class="modal fade bd-example-modal-lg" id="exampleModal${i}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg" role="document">
+							<div class="modal-content">
+							<div class="modal-body">
+								<div id="carouselExampleControls${i}" class="carousel slide" data-ride="carousel">
+									<div class="carousel-inner">
+										<div class="carousel-item active">
+										<img class="d-block w-100" src="${mostrar[i].url2[1].imageCategory.image[0].url}" alt="First slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[2].imageCategory.image[0].url}" alt="Second slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[3].imageCategory.image[0].url}" alt="Third slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[4].imageCategory.image[0].url}" alt="First slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[5].imageCategory.image[0].url}" alt="Second slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[6].imageCategory.image[0].url}" alt="Third slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[7].imageCategory.image[0].url}" alt="First slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[8].imageCategory.image[0].url}" alt="Second slide">
+										</div>
+										<div class="carousel-item">
+										<img class="d-block w-100" src="${mostrar[i].url2[9].imageCategory.image[0].url}" alt="Third slide">
+										</div>
+									</div>
+									<a class="carousel-control-prev" href="#carouselExampleControls${i}" role="button" data-slide="prev">
+										<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+									<a class="carousel-control-next" href="#carouselExampleControls${i}" role="button" data-slide="next">
+										<span class="carousel-control-next-icon" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+							</div>
+							</div>
+						</div>
+					</div>
+					`
 				}
 
 				document.getElementById('data-hotel').innerHTML = body
 			}
 
 	function verLocation() {
-		let data = document.getElementById('location').value
-		console.log(data)
-
-		localStorage.setItem('locationHotel', data)
-		
+		let dataLocal = document.getElementById('location').value
+		let dataCheckIn = document.getElementById('check-in').value
+		let dataRoom = document.getElementById('room').value
+		localStorage.setItem('locationHotel', dataLocal)
+		localStorage.setItem('checkInHotel', dataCheckIn)
+		localStorage.setItem('roomHotel', dataRoom)
 		let local = localStorage.getItem('locationHotel')
-
-		console.log(local)
-
-		location.href ="list.html";
+		location.href ="home3.html";
 	}
+
+	function verBooking(i) {
+		localStorage.setItem('dataBooking', JSON.stringify(dataInfo[i]))		
+		let local = JSON.parse(localStorage.getItem('dataBooking'))
+		location.href ="booking3.html";
+	}
+
 </script>
 <!-- Bootstrap JS -->
-<script src="./home_files/bootstrap.bundle.min.js.descarga"></script>
+<script src="https://t101-new-template.vercel.app/home_files/bootstrap.bundle.min.js.descarga"></script>
 
 <!-- Vendors -->
-<script src="./home_files/flatpickr.min.js.descarga"></script>
-<script src="./home_files/choices.min.js.descarga"></script>
-<script src="./home_files/tiny-slider.js.descarga"></script>
-<script src="./home_files/nouislider.min.js.descarga"></script>
+<script src="https://t101-new-template.vercel.app/home_files/flatpickr.min.js.descarga"></script>
+<script src="https://t101-new-template.vercel.app/home_files/choices.min.js.descarga"></script>
+<script src="https://t101-new-template.vercel.app/home_files/tiny-slider.js.descarga"></script>
+<script src="https://t101-new-template.vercel.app/home_files/nouislider.min.js.descarga"></script>
 
 <!-- ThemeFunctions -->
-<script src="./home_files/functions.js.descarga"></script><div class="flatpickr-calendar rangeMode" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
+<script src="https://t101-new-template.vercel.app/home_files/functions.js.descarga"></script><div class="flatpickr-calendar rangeMode" tabindex="-1"><div class="flatpickr-months"><span class="flatpickr-prev-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M5.207 8.471l7.146 7.147-0.707 0.707-7.853-7.854 7.854-7.853 0.707 0.707-7.147 7.146z"></path></svg></span><div class="flatpickr-month"><div class="flatpickr-current-month"><select class="flatpickr-monthDropdown-months" aria-label="Month" tabindex="-1"><option class="flatpickr-monthDropdown-month" value="0" tabindex="-1">January</option><option class="flatpickr-monthDropdown-month" value="1" tabindex="-1">February</option><option class="flatpickr-monthDropdown-month" value="2" tabindex="-1">March</option><option class="flatpickr-monthDropdown-month" value="3" tabindex="-1">April</option><option class="flatpickr-monthDropdown-month" value="4" tabindex="-1">May</option><option class="flatpickr-monthDropdown-month" value="5" tabindex="-1">June</option><option class="flatpickr-monthDropdown-month" value="6" tabindex="-1">July</option><option class="flatpickr-monthDropdown-month" value="7" tabindex="-1">August</option><option class="flatpickr-monthDropdown-month" value="8" tabindex="-1">September</option><option class="flatpickr-monthDropdown-month" value="9" tabindex="-1">October</option><option class="flatpickr-monthDropdown-month" value="10" tabindex="-1">November</option><option class="flatpickr-monthDropdown-month" value="11" tabindex="-1">December</option></select><div class="numInputWrapper"><input class="numInput cur-year" type="number" tabindex="-1" aria-label="Year"><span class="arrowUp"></span><span class="arrowDown"></span></div></div></div><span class="flatpickr-next-month"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 17 17"><g></g><path d="M13.207 8.472l-7.854 7.854-0.707-0.707 7.146-7.146-7.146-7.148 0.707-0.707 7.854 7.854z"></path></svg></span></div><div class="flatpickr-innerContainer"><div class="flatpickr-rContainer"><div class="flatpickr-weekdays"><div class="flatpickr-weekdaycontainer">
       <span class="flatpickr-weekday">
         Sun</span><span class="flatpickr-weekday">Mon</span><span class="flatpickr-weekday">Tue</span><span class="flatpickr-weekday">Wed</span><span class="flatpickr-weekday">Thu</span><span class="flatpickr-weekday">Fri</span><span class="flatpickr-weekday">Sat
       </span>

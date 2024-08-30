@@ -83,20 +83,11 @@
               </a>
             </li>
 
-            
-            <li class="menu-item">
-              <a href="../../home.html" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class='menu-icon tf-icons bx bx-hotel'></i>
-                <div data-i18n="Analytics">Booking</div>
-              </a>
-            </li>
-
             <li class="menu-item">
               <a href="booking.html" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class='menu-icon tf-icons bx bx-hotel'></i>
-                <div data-i18n="Analytics">Booking in Dashboard</div>
+                <div data-i18n="Analytics">Booking</div>
               </a>
             </li>
 
@@ -161,15 +152,8 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
+                  <i class='bx bx-moon'></i>
+                  <i class='bx bx-bell'></i>
                 </li>
 
                 <!-- User -->
@@ -181,7 +165,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
@@ -199,7 +183,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
@@ -238,54 +222,63 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> COMPANIES</h4>
-
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <div class="row">
-                  <div class="col-8">
-                    <h5 class="card-header"><strong>COMPANIES</strong></h5>
+                  <div class="col-7">
+                    <h4 class="card-header"><strong style="color: #1c46a3; font-weight: 500;">Companies</strong></h4>
                   </div>
-                  <div class="col-4">
+                  <div class="col-1" style="align-content: center; text-align: end;">
+                    <i class='bx bx-download'></i>    
+                  </div>
+                  <div class="col-2" style="align-content: center;">
+                    <input
+                          type="text"
+                          id="modalEditTaxID"
+                          name="modalEditTaxID"
+                          class="form-control modal-edit-tax-id"
+                          placeholder="Search Company" />
+                  </div>
+                  <div class="col-2" style="align-content: center;">
                     <button
                       data-bs-target="#editUser"
                       data-bs-toggle="modal"
-                      class="btn btn-primary mt-3 text-nowrap add-new-role">
-                      Add New Company
+                      id="add-new"
+                      class="btn btn-primary text-nowrap add-new-role">
+                      ADD NEW
                     </button>    
                   </div>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
-                      <tr>
-                        <th>USER</th>
-                        <th>COMPANY</th>
-                        <th>ROLE</th>
-                        <th>BIRTHDAY</th>
-                        <th>GENDER</th>
+                      <tr style="background-color: #fafafc;">
+                        <th>LEGAL NAME</th>
+                        <th>DOMAIN</th>
+                        <th>TAX ID</th>
+                        <th>ADDRESS</th>
+                        <th>CITY</th>
+                        <th>COUNTRY</th>
+                        <th>PHONE</th>
+                        <th>IS ACTIVE</th>
+                        <th>USERS</th>
+                        <th>ACTIONS</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
+                    <tbody class="table-border-bottom-0" id="dataCompany" style="border-top: 0px solid #fff;">
                       <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>Angular Project</strong></td>
                         <td>Albert Cook</td>
-                        <td><span class="badge bg-label-primary ">Active</span></td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td><span class="badge bg-label-success ">ACTIVE</span></td>
+                        <td>Albert Cook</td>
                         <td>
-                          <div class="dropdown">
+                          <i class="bx bx-edit "></i><i class="bx bx-trash "></i>
+                          <!-- <div class="dropdown">
                             <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
                               <i class="bx bx-dots-vertical-rounded"></i>
                             </button>
@@ -297,172 +290,7 @@
                                 ><i class="bx bx-trash "></i> Delete</a
                               >
                             </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-react fa-lg text-info"></i> <strong>React Project</strong></td>
-                        <td>Barry Hunter</td>
-                        <td><span class="badge bg-label-success ">Completed</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-vuejs fa-lg text-success"></i> <strong>VueJs Project</strong></td>
-                        <td>Trevor Baker</td>
-                        <td><span class="badge bg-label-info ">Scheduled</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>Angular Project</strong></td>
-                        <td>Albert Cook</td>
-                        <td><span class="badge bg-label-primary ">Active</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt "></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash "></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-react fa-lg text-info"></i> <strong>React Project</strong></td>
-                        <td>Barry Hunter</td>
-                        <td><span class="badge bg-label-success ">Completed</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-vuejs fa-lg text-success"></i> <strong>VueJs Project</strong></td>
-                        <td>Trevor Baker</td>
-                        <td><span class="badge bg-label-info ">Scheduled</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
+                          </div> -->
                         </td>
                       </tr>
                     </tbody>
@@ -474,139 +302,224 @@
             </div>
             <!-- / Content -->
             <div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-                <div class="modal-content p-3 p-md-5">
+              <div class="modal-dialog modal-lg modal-simple modal-edit-user" style="max-width: 80%;">
+                <div class="modal-content">
                   <div class="modal-body">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="text-center mb-4">
-                      <h3>Company Information</h3>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <div class="mb-4">
+                      <h3 style="color: #1c46a3; font-weight: 500;">Add New Company</h3>
                     </div>
                     <form id="editUserForm" class="row g-3" onsubmit="return false">
-                      <div class="col-12">
-                        <label class="form-label" for="modalEditUserName">Name</label>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName">Legal Name</label>
                         <input
                           type="text"
-                          id="modalEditUserName"
-                          name="modalEditUserName"
+                          id="name"
                           class="form-control"
-                          placeholder="john.doe.007" />
+                        />
                       </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserEmail">Email</label>
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserEmail">Tax Id</label>
                         <input
                           type="text"
-                          id="modalEditUserEmail"
-                          name="modalEditUserEmail"
+                          id="tax"
                           class="form-control"
-                          placeholder="example@domain.com" />
+                        />
                       </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserStatus">Status</label>
-                        <select
-                          id="modalEditUserStatus"
-                          name="modalEditUserStatus"
-                          class="form-select"
-                          aria-label="Default select example">
-                          <option selected>Status</option>
-                          <option value="1">Active</option>
-                          <option value="2">Inactive</option>
-                          <option value="3">Suspended</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditTaxID">Tax ID</label>
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditTaxID">Address</label>
                         <input
                           type="text"
-                          id="modalEditTaxID"
+                          id="address"
+                          class="form-control modal-edit-tax-id"
+                          placeholder="123 456 7890" />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditUserStatus">Domain</label>
+                        <input
+                          type="text"
+                          id="domain"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditTaxID">Website</label>
+                        <input
+                          type="text"
+                          id="web"
                           name="modalEditTaxID"
                           class="form-control modal-edit-tax-id"
                           placeholder="123 456 7890" />
                       </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserPhone">Phone Number</label>
-                        <div class="input-group input-group-merge">
-                          <span class="input-group-text">+1</span>
-                          <input
-                            type="text"
-                            id="modalEditUserPhone"
-                            name="modalEditUserPhone"
-                            class="form-control phone-number-mask"
-                            placeholder="202 555 0111" />
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserLanguage">Language</label>
-                        <select
-                          id="modalEditUserLanguage"
-                          name="modalEditUserLanguage"
-                          class="select2 form-select"
-                          multiple>
-                          <option value="">Select</option>
-                          <option value="english" selected>English</option>
-                          <option value="spanish">Spanish</option>
-                          <option value="french">French</option>
-                          <option value="german">German</option>
-                          <option value="dutch">Dutch</option>
-                          <option value="hebrew">Hebrew</option>
-                          <option value="sanskrit">Sanskrit</option>
-                          <option value="hindi">Hindi</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6">
+                      <div class="col-md-3">
                         <label class="form-label" for="modalEditUserCountry">Country</label>
                         <select
-                          id="modalEditUserCountry"
-                          name="modalEditUserCountry"
+                          id="country"
                           class="select2 form-select"
                           data-allow-clear="true">
                           <option value="">Select</option>
-                          <option value="Australia">Australia</option>
-                          <option value="Bangladesh">Bangladesh</option>
-                          <option value="Belarus">Belarus</option>
-                          <option value="Brazil">Brazil</option>
-                          <option value="Canada">Canada</option>
-                          <option value="China">China</option>
-                          <option value="France">France</option>
-                          <option value="Germany">Germany</option>
-                          <option value="India">India</option>
-                          <option value="Indonesia">Indonesia</option>
-                          <option value="Israel">Israel</option>
-                          <option value="Italy">Italy</option>
-                          <option value="Japan">Japan</option>
-                          <option value="Korea">Korea, Republic of</option>
-                          <option value="Mexico">Mexico</option>
-                          <option value="Philippines">Philippines</option>
-                          <option value="Russia">Russian Federation</option>
-                          <option value="South Africa">South Africa</option>
-                          <option value="Thailand">Thailand</option>
-                          <option value="Turkey">Turkey</option>
-                          <option value="Ukraine">Ukraine</option>
-                          <option value="United Arab Emirates">United Arab Emirates</option>
-                          <option value="United Kingdom">United Kingdom</option>
-                          <option value="United States">United States</option>
+                          <option value="d5576435-6d83-e811-80bd-1cc1de1a8d46">United States</option>
                         </select>
                       </div>
-                      <div class="col-12">
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditUserStatus">State</label>
+                        <select
+                          id="state"
+                          class="select2 form-select"
+                          data-allow-clear="true">
+                          <option value="">Select</option>
+                          <option value="024cee3c-6f83-e811-80bd-1cc1de1a8d46">Alabama</option>
+                          <option value="742d7e50-6f83-e811-80bd-1cc1de1a8d46">Alaska</option>
+                          <option value="cb19c834-ea2e-fa62-7f0a-20a73d202537">Arizona</option>
+                          <option value="53d028b8-d1cd-f1f4-7617-98419a3c0c2b">Arkansas</option>
+                          <option value="2832e879-b59d-ce2e-a43d-6d73cafc18b9">California</option>
+                          <option value="987cb920-d4dc-fd52-cde6-42da42545450">Colorado</option>
+                          <option value="e514804c-d138-3b0d-d2fd-c31aea0ecb1d">Connecticut</option>
+                          <option value="b7e0a309-3060-756e-ae78-6d23df65df9c">Delaware</option>
+                          <option value="4e8d9698-5e87-59f3-5674-e8b72649f96f">Florida</option>
+                          <option value="369e8b1a-b2a6-a150-42ef-3526c6d13dc0">Georgia</option>
+                          <option value="3e65f34a-90a3-3a41-da91-4e727ae1de2f">Hawaii</option>
+                          <option value="39d789cb-2fd4-7079-586f-b65c6fc1cea9">Idaho</option>
+                          <option value="d7542410-dcad-38d9-62bf-cf1c7059b4a6">Illinois</option>
+                          <option value="6a14dc2e-e421-2be1-b7f5-676a21054879">Indiana</option>
+                          <option value="c57dfcd3-8c15-df7e-f5cb-5cec812b6fc9">Iowa</option>
+                          <option value="e4c52cb6-97ae-f16a-c092-c5ac83fa8256">Kansas</option>
+                          <option value="ef0ecbfe-39f9-ecd7-27b7-2c6d1d6d480b">Kentucky</option>
+                          <option value="db9c257d-e7bd-e849-3e2c-7b6fdb50eb8e">Louisiana</option>
+                          <option value="75c43a60-bd63-591d-e423-58c5de271c21">Maine</option>
+                          <option value="c023b138-fe98-a2b9-aea6-78656a054106">Maryland</option>
+                          <option value="cd0287f0-1b23-7f52-6ef5-28034a818273">Massachusetts</option>
+                          <option value="37dea9a3-4491-57d4-c382-4e89f1927209">Michigan</option>
+                          <option value="4f673969-7cba-734a-84e3-280e8a2e0b6a">Minnesota</option>
+                          <option value="bdf4f39d-6258-b1a0-3be3-ceaf2146f27f">Mississippi</option>
+                          <option value="89cf96f7-e3c0-2bc7-a82f-6792e8fa28ad">Missouri</option>
+                          <option value="c0407f0e-fa0e-da40-82de-31352eab6902">Montana</option>
+                          <option value="356c5d2b-cb8c-6a7d-c340-485ad7156ce0">Nebraska</option>
+                          <option value="da6eb5cc-4f8d-3294-1902-428525be7ba9">Nevada</option>
+                          <option value="13d40e14-92d0-6042-bca3-67b2dca208ba">New Hampshire</option>
+                          <option value="1e0d102a-c42f-be5c-67a1-242f5e8a65ab">New Jersey</option>
+                          <option value="765afa7e-af1b-e261-467d-fa01a16f1ac2">New Mexico</option>
+                          <option value="2edfca26-d972-deb9-315f-b09eca4f7d7a">New York</option>
+                          <option value="e878687a-4b02-e612-3b98-4d36f5859a90">North Carolina</option>
+                          <option value="f2b48729-2912-cd3a-2db1-426c69ba5dc9">North Dakota</option>
+                          <option value="da90b5a7-e47a-e47c-303f-23f38efb7cfc">Ohio</option>
+                          <option value="42c25e35-9f05-9b83-85d1-8dcb6243af2b">Oklahoma</option>
+                          <option value="f171b2a5-afb3-a625-84fb-769ef0c050cf">Oregon</option>
+                          <option value="7b78a526-fcb1-615c-35d4-54e067409eb4">Pennsylvania</option>
+                          <option value="b1dba95b-b10d-169e-49e3-2739f19d601b">Rhode Island</option>
+                          <option value="b31a3785-4645-d3f0-1f7c-ca056f06ca6d">South Carolina</option>
+                          <option value="e53d0e90-ec82-734e-6171-1c9f76919ea4">South Dakota</option>
+                          <option value="30c4bda9-a069-4fd0-f8d9-8729d08b397b">Tennessee</option>
+                          <option value="829510cd-b861-9257-56d2-96e06054e760">Texas</option>
+                          <option value="7a987b72-5bf2-13a9-ca1d-1e6d42ea86a2">Utah</option>
+                          <option value="f1bde0ec-4581-7da6-b294-7243a21d32e7">Vermont</option>
+                          <option value="fa8c84d8-fcf8-8a96-ce0c-29f3086ea2d0">Virginia</option>
+                          <option value="9487b583-1eb0-42b2-85c0-db80a6927e19">Washington</option>
+                          <option value="92d124c0-8e90-6fc9-135d-daca3a84bdba">West Virginia</option>
+                          <option value="fa5f9e08-560b-b954-3042-80ac6cb17cd6">Wisconsin</option>
+                          <option value="b1bd0a95-3ab9-714c-50ed-1346dbe6c628">Wyoming"
+                        </select>
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserStatus">Phone</label>
+                        <input
+                          type="text"
+                          id="phone"
+                          name="modalEditUserEmail"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditTaxID">City</label>
+                        <input
+                          type="text"
+                          id="city"
+                          name="modalEditTaxID"
+                          class="form-control modal-edit-tax-id"
+                          placeholder="123 456 7890" />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditTaxID">ZIP Code</label>
+                        <input
+                          type="text"
+                          id="zip"
+                          name="modalEditTaxID"
+                          class="form-control modal-edit-tax-id"
+                          placeholder="123 456 7890" />
+                      </div>
+                      
+                      <div class="col-2" style="padding-top: 38px;">
                         <label class="switch">
-                          <input type="checkbox" class="switch-input" />
+                          <input type="checkbox" id="master" value="true" onclick="valorMaster()" class="switch-input" />
                           <span class="switch-toggle-slider">
                             <span class="switch-on"></span>
                             <span class="switch-off"></span>
                           </span>
-                          <span class="switch-label">Use as a billing address?</span>
+                          <span class="switch-label">Is Master</span>
                         </label>
                       </div>
-                      <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                        <button
+                      <div class="col-2" style="padding-top: 38px;">
+                        <label class="switch">
+                          <input type="checkbox" id="active" value="true" onclick="valorActive()" class="switch-input" />
+                          <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                          </span>
+                          <span class="switch-label">Is Active</span>
+                        </label>
+                      </div>
+                      
+                      <!-- <div class="col-12 text-end">
+                        <button type="submit" style="background-color: #616161;border-color: #616161;" class="btn btn-primary me-sm-3 me-1">Submit</button>
+                        <button style="border: 1px solid;"
                           type="reset"
                           class="btn btn-label-secondary"
                           data-bs-dismiss="modal"
                           aria-label="Close">
                           Cancel
                         </button>
+                      </div> -->
+
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1" data-bs-dismiss="modal" aria-label="Close" onclick="save()">Save Changes</button>
+                        <button style="border: 1px solid;"
+                          type="reset"
+                          class="btn btn-label-secondary"
+                          data-bs-dismiss="modal"
+                          onclick="vaciar()"
+                          aria-label="Close">
+                          Cancel
+                        </button>
                       </div>
                     </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="detailUser" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-simple modal-edit-user" style="max-width: 80%;">
+                <div class="modal-content">
+                  <div class="modal-body" id="view">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Delete</h5>
+                    
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete this company ?
+                  </div>
+                  <div class="modal-footer">
+                    <button style="border: 1px solid;" type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close"> Close </button>
+                    <button type="submit" class="btn btn-primary me-sm-3 me-1" data-bs-dismiss="modal" aria-label="Close" onclick="eliminar()">confirm</button>
                   </div>
                 </div>
               </div>
@@ -637,7 +550,289 @@
     </div>
     <!-- / Layout wrapper -->
 
-    
+    <script>
+      // document.getElementById('location').value = local
+      let allCompany = null
+      let isEdit = false
+      let dataEdit = null
+      let master = false
+      let active = false
+
+      let url = 'https://t101api.azurewebsites.net/Company/getAll'
+        fetch(url, {
+          headers: {
+            "Content-Type": "application/json",
+            'access-control-allow-origin': '*',
+            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+            'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+          },
+          })
+          .then(response => response.json())
+          .then(data => mostrarData(data))
+          .catch(error => console.log(error))
+
+          function cargar() {
+            fetch('https://t101api.azurewebsites.net/Company/getAll', {
+              headers: {
+                "Content-Type": "application/json",
+                'access-control-allow-origin': '*',
+                'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+              },
+              })
+              .then(response => response.json())
+              .then(data => mostrarData(data))
+              .catch(error => console.log(error))
+          }
+
+          function valorMaster()
+          {
+            master = !master
+          }
+
+          function valorActive()
+          {
+            active = !active
+          }
+
+          function vaciar() {
+            isEdit = false
+            // document.getElementById("add-new").click()
+            document.getElementById("name").value = ''
+            document.getElementById("tax").value = ''
+            document.getElementById("domain").value = ''
+            document.getElementById("address").value = ''
+            document.getElementById("city").value = ''
+            document.getElementById("state").value = ''
+            document.getElementById("zip").value = ''
+            document.getElementById("phone").value = ''
+            document.getElementById("country").value = ''
+            document.getElementById("web").value = ''
+          }
+
+          function editar(id){
+            isEdit = true
+            console.log(allCompany[id])
+            dataEdit = allCompany[id]
+
+            document.getElementById("add-new").click()
+            document.getElementById("name").value = allCompany[id].legalName
+            document.getElementById("tax").value = allCompany[id].taxId
+            document.getElementById("domain").value = allCompany[id].domain
+            document.getElementById("address").value = allCompany[id].address
+            document.getElementById("city").value = allCompany[id].city
+            document.getElementById("state").value = allCompany[id].stateId
+            document.getElementById("zip").value = allCompany[id].zipCode
+            document.getElementById("phone").value = allCompany[id].phone
+            document.getElementById("country").value = allCompany[id].countryId
+            document.getElementById("web").value = allCompany[id].website
+            if (allCompany[id].isAdmin) {
+              document.getElementById("master").checked = true
+              master = true
+            }
+            if (allCompany[id].isActive) {
+              document.getElementById("active").checked = true          
+            }
+            
+          }
+
+          function save(){
+            let data = 
+            {
+              "legalName": document.getElementById("name").value,
+              "isMaster": master,
+              "isActive": active,
+              "taxId": document.getElementById("tax").value,
+              "domain": document.getElementById("domain").value,
+              "address": document.getElementById("address").value,
+              "city": document.getElementById("city").value,
+              "stateId": document.getElementById("state").value,
+              "zipCode": document.getElementById("zip").value,
+              "phone": document.getElementById("phone").value,
+              "website": document.getElementById("web").value,
+              "feeResponsability": "string",
+              "admitBookingsOnBehalfOf": true,
+              "users": []
+            }
+            if (isEdit) {
+              let urlDescription = 'https://t101api.azurewebsites.net/Company/update/' + dataEdit.id
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "PUT",
+                body: JSON.stringify(data),
+                })
+                .then(response => response.text())
+                .then(data2 => {
+                  console.log(data2);
+                  vaciar()
+                  cargar()
+              })
+            } else {
+              let urlDescription = 'https://t101api.azurewebsites.net/Company/create'
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "POST",
+                body: JSON.stringify(data),
+                })
+                .then(response => response.json())
+                .then(data2 => {
+                  // <div class="alert alert-success alert-dismissible" role="alert">
+                  //       This is a success dismissible alert — check it out!
+                  //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  //     </div>
+
+                  //     <div class="alert alert-danger alert-dismissible" role="alert">
+                  //       This is a danger dismissible alert — check it out!
+                  //       <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  //     </div>
+
+
+                  // <div
+                  //       class="bs-toast toast fade show bg-danger"
+                  //       role="alert"
+                  //       aria-live="assertive"
+                  //       aria-atomic="true"
+                  //     >
+                  //       <div class="toast-header">
+                  //         <i class="bx bx-bell me-2"></i>
+                  //         <div class="me-auto fw-semibold">Bootstrap</div>
+                  //         <small>11 mins ago</small>
+                  //         <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                  //       </div>
+                  //       <div class="toast-body">
+                  //         Fruitcake chocolate bar tootsie roll gummies gummies jelly beans cake.
+                  //       </div>
+                  //     </div>
+                  vaciar()
+                  cargar()
+                })
+            }
+          }
+
+          function eliminar(){
+              let urlDescription = 'https://t101api.azurewebsites.net/Company/delete/' + dataEdit.id
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "DELETE",
+                body: null,
+                })
+                .then(response => response.text())
+                .then(data2 => {
+                  console.log(data2);
+                })
+                vaciar()
+                cargar()
+          }
+
+          function selecItem(id){
+            dataEdit = allCompany[id]
+          }
+
+          const mostrarData = (data) => {
+              console.log(data)
+              allCompany = data
+              let body = ''
+              let length = data.length > 10 ? 10 : data.length
+              for (let i = 0; i < length; i++) {
+                allCompany[i].order = i
+                body += `
+                            <tr>
+                              <td><a style="cursor:pointer;" data-bs-target="#detailUser" data-bs-toggle="modal" onclick="verDetalle(${allCompany[i].order})">${allCompany[i].legalName}</a></td>
+                              <td>${allCompany[i].domain}</td>
+                              <td>${allCompany[i].taxId}</td>
+                              <td>${allCompany[i].address}</td>
+                              <td>${allCompany[i].city}</td>
+                              <td>${allCompany[i].countryName}</td>
+                              <td>${allCompany[i].phone}</td>
+                              ${allCompany[i].isActive ? '<td><span class="badge bg-label-success ">ACTIVE</span></td>' : '<td><span class="badge bg-label-warning ">INACTIVE</span></td>'}
+                              <td>${allCompany[i].users.length}</td>
+                              <td>
+                              <a style="cursor:pointer;" onclick="editar(${allCompany[i].order})"><i class="bx bx-edit"></i></a><a style="cursor:pointer;" data-bs-target="#confirmModal" data-bs-toggle="modal" onclick="selecItem(${allCompany[i].order})"><i class="bx bx-trash "></i></a>
+                            </td>
+                            </tr>
+                `
+              }
+
+              document.getElementById('dataCompany').innerHTML = body
+          }
+
+          function verDetalle(id) 
+          {
+            let data = allCompany[id]
+            let body = ''
+            body += `
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <div class="mb-4">
+                      <h3 style="color: #1c46a3; font-weight: 500;">View Company Details</h3>
+                    </div> 
+                    <div class="row p-4">         
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName"><b>Legal Name:</b> ${' ' + data.legalName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName"><b>Tax Id:</b> ${' ' + data.taxId}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName"><b>Address:</b> ${' ' + data.address}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserCountry"><b>Domain:</b> ${' ' + data.domain}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Website:</b> ${' ' + data.website}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditTaxID"><b>Country:</b> ${' ' + data.countryName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserCountry"><b>State:</b> ${' ' + data.stateName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Phone:</b> ${' ' + data.phone}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>City:</b> ${' ' + data.city}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>ZIP Code:</b> ${' ' + data.zipCode}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Is Master:</b> ${' ' + data.isAdmin ? 'Yes' : 'No'}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Is Active:</b> ${' ' + data.isActive ? 'Yes' : 'No'}</label>
+                      </div>
+                      
+                      <div class="col-12">
+                        <button style="border: 1px solid;"
+                          type="reset"
+                          class="btn btn-label-secondary"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                          >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+              `
+            document.getElementById('view').innerHTML = body
+          }
+    </script>
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->

@@ -83,20 +83,11 @@
               </a>
             </li>
 
-            
-            <li class="menu-item">
-              <a href="../../home.html" class="menu-link">
-                <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
-                <i class='menu-icon tf-icons bx bx-hotel'></i>
-                <div data-i18n="Analytics">Booking</div>
-              </a>
-            </li>
-
             <li class="menu-item">
               <a href="booking.html" class="menu-link">
                 <!-- <i class="menu-icon tf-icons bx bx-home-circle"></i> -->
                 <i class='menu-icon tf-icons bx bx-hotel'></i>
-                <div data-i18n="Analytics">Booking in Dashboard</div>
+                <div data-i18n="Analytics">Booking</div>
               </a>
             </li>
 
@@ -161,15 +152,8 @@
               <ul class="navbar-nav flex-row align-items-center ms-auto">
                 <!-- Place this tag where you want the button to render. -->
                 <li class="nav-item lh-1 me-3">
-                  <a
-                    class="github-button"
-                    href="https://github.com/themeselection/sneat-html-admin-template-free"
-                    data-icon="octicon-star"
-                    data-size="large"
-                    data-show-count="true"
-                    aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-                    >Star</a
-                  >
+                  <i class='bx bx-moon'></i>
+                  <i class='bx bx-bell'></i>
                 </li>
 
                 <!-- User -->
@@ -181,7 +165,7 @@
                   </a>
                   <ul class="dropdown-menu dropdown-menu-end">
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
                         <div class="d-flex">
                           <div class="flex-shrink-0 me-3">
                             <div class="avatar avatar-online">
@@ -199,7 +183,7 @@
                       <div class="dropdown-divider"></div>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">
+                      <a class="dropdown-item" href="pages-account-settings-account.html">
                         <i class="bx bx-user me-2"></i>
                         <span class="align-middle">My Profile</span>
                       </a>
@@ -238,38 +222,46 @@
             <!-- Content -->
 
             <div class="container-xxl flex-grow-1 container-p-y">
-              <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Tables /</span> USERS</h4>
-
               <!-- Basic Bootstrap Table -->
               <div class="card">
                 <div class="row">
                   <div class="col-8">
-                    <h5 class="card-header"><strong>USERS</strong></h5>
+                    <h4 class="card-header"><strong style="color: #1c46a3; font-weight: 500;">Users</strong></h4>
                   </div>
-                  <div class="col-4">
+                  <div class="col-2" style="align-content: center;">
+                    <input
+                          type="text"
+                          id="modalEditTaxID"
+                          name="modalEditTaxID"
+                          class="form-control modal-edit-tax-id"
+                          placeholder="Search User" />
+                  </div>
+                  <div class="col-2" style="align-content: center;">
                     <button
                       data-bs-target="#editUser"
                       data-bs-toggle="modal"
-                      class="btn btn-primary mt-3 text-nowrap add-new-role">
-                      Add New User
+                      id="add-new"
+                      class="btn btn-primary text-nowrap add-new-role">
+                      ADD NEW
                     </button>    
-                    <!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#editUser">
-                      Show
-                    </button> -->
                   </div>
                 </div>
                 <div class="table-responsive text-nowrap">
                   <table class="table">
                     <thead>
-                      <tr>
+                      <tr style="background-color: #fafafc;">
+                        <th></th>
                         <th>USER</th>
                         <th>COMPANY</th>
                         <th>ROLE</th>
                         <th>BIRTHDAY</th>
                         <th>GENDER</th>
+                        <th>PHONE</th>
+                        <th>IS ACTIVE</th>
+                        <th>ACTIONS</th>
                       </tr>
                     </thead>
-                    <tbody class="table-border-bottom-0">
+                    <tbody class="table-border-bottom-0" id="dataCompany" style="border-top: 0px solid #fff;">
                       <tr>
                         <td>
                           <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
@@ -284,188 +276,15 @@
                             </li>
                           </ul>
                         </td>
-                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>Angular Project</strong></td>
                         <td>Albert Cook</td>
-                        <td><span class="badge bg-label-primary ">Active</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt "></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash "></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-react fa-lg text-info"></i> <strong>React Project</strong></td>
-                        <td>Barry Hunter</td>
-                        <td><span class="badge bg-label-success ">Completed</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-vuejs fa-lg text-success"></i> <strong>VueJs Project</strong></td>
-                        <td>Trevor Baker</td>
-                        <td><span class="badge bg-label-info ">Scheduled</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Lilian Fuller"
-                            >
-                              <img src="../assets/img/avatars/5.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-angular fa-lg text-danger"></i> <strong>Angular Project</strong></td>
                         <td>Albert Cook</td>
-                        <td><span class="badge bg-label-primary ">Active</span></td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td>Albert Cook</td>
+                        <td><span class="badge bg-label-success ">ACTIVE</span></td>
                         <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt "></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash "></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Sophia Wilkerson"
-                            >
-                              <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-react fa-lg text-info"></i> <strong>React Project</strong></td>
-                        <td>Barry Hunter</td>
-                        <td><span class="badge bg-label-success ">Completed</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
-                            <li
-                              data-bs-toggle="tooltip"
-                              data-popup="tooltip-custom"
-                              data-bs-placement="top"
-                              class="avatar avatar-xs pull-up"
-                              title="Christina Parker"
-                            >
-                              <img src="../assets/img/avatars/7.png" alt="Avatar" class="rounded-circle" />
-                            </li>
-                          </ul>
-                        </td>
-                        <td><i class="fab fa-vuejs fa-lg text-success"></i> <strong>VueJs Project</strong></td>
-                        <td>Trevor Baker</td>
-                        <td><span class="badge bg-label-info ">Scheduled</span></td>
-                        <td>
-                          <div class="dropdown">
-                            <button type="button" class="btn p-0 dropdown-toggle hide-arrow" data-bs-toggle="dropdown">
-                              <i class="bx bx-dots-vertical-rounded"></i>
-                            </button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-edit-alt me-2"></i> Edit</a
-                              >
-                              <a class="dropdown-item" href="javascript:void(0);"
-                                ><i class="bx bx-trash me-2"></i> Delete</a
-                              >
-                            </div>
-                          </div>
+                          <i class="bx bx-edit"></i><i class="bx bx-trash "></i>
                         </td>
                       </tr>
                     </tbody>
@@ -477,153 +296,165 @@
             </div>
             <!-- / Content -->
             <div class="modal fade" id="editUser" tabindex="-1" aria-hidden="true">
-              <div class="modal-dialog modal-lg modal-simple modal-edit-user">
-                <div class="modal-content p-3 p-md-5">
+              <div class="modal-dialog modal-lg modal-simple modal-edit-user" style="max-width: 80%;">
+                <div class="modal-content">
                   <div class="modal-body">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    <div class="text-center mb-4">
-                      <h3>User Information</h3>
+                    <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <div class="mb-4">
+                      <h3 style="color: #1c46a3; font-weight: 500;">Add New User</h3>
                     </div>
-                    <form id="editUserForm" class="row g-3" onsubmit="return false">
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserFirstName">First Name</label>
+                    <img
+                        class="img-fluid rounded my-4"
+                        src="../../sneat/assets/img/avatars/1.png"
+                        height="110"
+                        width="110"
+                        id="img"
+                        alt="User avatar" />
+                      <label class="btn btn-primary">UPLOAD NEW PHOTO
+                        <input type="file" class="form-control required d-none" id="file" name="file" ng-model="Form.file" onchange="mostrar()" required>
+                      </label>
+                    <form id="formUser" class="row g-3" onsubmit="return false">
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName">Email / Username</label>
                         <input
+                          style="height: 60px;"
                           type="text"
-                          id="modalEditUserFirstName"
-                          name="modalEditUserFirstName"
-                          class="form-control"
-                          placeholder="John" />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserLastName">Last Name</label>
-                        <input
-                          type="text"
-                          id="modalEditUserLastName"
-                          name="modalEditUserLastName"
-                          class="form-control"
-                          placeholder="Doe" />
-                      </div>
-                      <div class="col-12">
-                        <label class="form-label" for="modalEditUserName">Username</label>
-                        <input
-                          type="text"
-                          id="modalEditUserName"
+                          id="email"
                           name="modalEditUserName"
                           class="form-control"
-                          placeholder="john.doe.007" />
+                        />
                       </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserEmail">Email</label>
-                        <input
-                          type="text"
-                          id="modalEditUserEmail"
-                          name="modalEditUserEmail"
-                          class="form-control"
-                          placeholder="example@domain.com" />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserStatus">Status</label>
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserCountry">Company</label>
                         <select
-                          id="modalEditUserStatus"
-                          name="modalEditUserStatus"
-                          class="form-select"
-                          aria-label="Default select example">
-                          <option selected>Status</option>
-                          <option value="1">Active</option>
-                          <option value="2">Inactive</option>
-                          <option value="3">Suspended</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditTaxID">Tax ID</label>
-                        <input
-                          type="text"
-                          id="modalEditTaxID"
-                          name="modalEditTaxID"
-                          class="form-control modal-edit-tax-id"
-                          placeholder="123 456 7890" />
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserPhone">Phone Number</label>
-                        <div class="input-group input-group-merge">
-                          <span class="input-group-text">+1</span>
-                          <input
-                            type="text"
-                            id="modalEditUserPhone"
-                            name="modalEditUserPhone"
-                            class="form-control phone-number-mask"
-                            placeholder="202 555 0111" />
-                        </div>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserLanguage">Language</label>
-                        <select
-                          id="modalEditUserLanguage"
-                          name="modalEditUserLanguage"
-                          class="select2 form-select"
-                          multiple>
-                          <option value="">Select</option>
-                          <option value="english" selected>English</option>
-                          <option value="spanish">Spanish</option>
-                          <option value="french">French</option>
-                          <option value="german">German</option>
-                          <option value="dutch">Dutch</option>
-                          <option value="hebrew">Hebrew</option>
-                          <option value="sanskrit">Sanskrit</option>
-                          <option value="hindi">Hindi</option>
-                        </select>
-                      </div>
-                      <div class="col-12 col-md-6">
-                        <label class="form-label" for="modalEditUserCountry">Country</label>
-                        <select
-                          id="modalEditUserCountry"
+                          style="height: 60px;"
+                          id="company"
                           name="modalEditUserCountry"
                           class="select2 form-select"
                           data-allow-clear="true">
-                          <option value="">Select</option>
-                          <option value="Australia">Australia</option>
-                          <option value="Bangladesh">Bangladesh</option>
-                          <option value="Belarus">Belarus</option>
-                          <option value="Brazil">Brazil</option>
-                          <option value="Canada">Canada</option>
-                          <option value="China">China</option>
-                          <option value="France">France</option>
-                          <option value="Germany">Germany</option>
-                          <option value="India">India</option>
-                          <option value="Indonesia">Indonesia</option>
-                          <option value="Israel">Israel</option>
-                          <option value="Italy">Italy</option>
-                          <option value="Japan">Japan</option>
-                          <option value="Korea">Korea, Republic of</option>
-                          <option value="Mexico">Mexico</option>
-                          <option value="Philippines">Philippines</option>
-                          <option value="Russia">Russian Federation</option>
-                          <option value="South Africa">South Africa</option>
-                          <option value="Thailand">Thailand</option>
-                          <option value="Turkey">Turkey</option>
-                          <option value="Ukraine">Ukraine</option>
-                          <option value="United Arab Emirates">United Arab Emirates</option>
-                          <option value="United Kingdom">United Kingdom</option>
-                          <option value="United States">United States</option>
+                          
+                          <option value="fffd0490-4b52-49e0-8cd0-72471d1e847a">Company Example</option>
+                          <option value="a671cb90-7c82-47ad-8204-d778314d55ae">Majo</option>
+                          <option value="6e524a1d-bf63-4745-a56c-a0be890c8eca">MajoM</option>
+                          <option value="ecf4fac0-2952-490b-9690-4cdf1fefa4e9">MM</option>
+                          <option value="8a28ecba-e115-40be-bf4c-57660e198dfd">Striano</option>
                         </select>
                       </div>
-                      <div class="col-12">
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditUserStatus">First Name</label>
+                        <input
+                        style="height: 60px;"
+                        type="text"
+                          id="name"
+                          name="modalEditUserEmail"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditTaxID">Last Name</label>
+                        <input
+                        style="height: 60px;"
+                        type="text"
+                          id="last"
+                          name="modalEditTaxID"
+                          class="form-control modal-edit-tax-id"
+                         />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserCountry">Position</label>
+                        <select
+                        style="height: 60px;"
+                        id="position"
+                          name="modalEditUserCountry"
+                          class="select2 form-select"
+                          data-allow-clear="true">
+                          
+                          <option value="bb36975f-af12-4e4e-9a2d-64393d3cdcca">Developer</option>
+                        </select>
+                      </div>
+                      <div class="col-1" style="padding-top: 38px;">
                         <label class="switch">
-                          <input type="checkbox" class="switch-input" />
+                          <input type="radio" onclick="valorGender('Female')" id="female" value="Female" class="switch-input" />
                           <span class="switch-toggle-slider">
                             <span class="switch-on"></span>
                             <span class="switch-off"></span>
                           </span>
-                          <span class="switch-label">Use as a billing address?</span>
+                          <span class="switch-label">Female</span>
                         </label>
                       </div>
-                      <div class="col-12 text-center">
-                        <button type="submit" class="btn btn-primary me-sm-3 me-1">Submit</button>
-                        <button
+                      <div class="col-2" style="padding-top: 38px;">
+                        <label class="switch">
+                          <input type="radio" onclick="valorGender('Male')" id="male" value="Male" class="switch-input" />
+                          <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                          </span>
+                          <span class="switch-label">Male</span>
+                        </label>
+                      </div>
+                      <div class="col-md-3">
+                        <label class="form-label" for="modalEditUserStatus">Birthday</label>
+                        <input
+                        style="height: 60px;"
+                        type="date"
+                          id="birthdate"
+                          name="modalEditUserEmail"
+                          class="form-control"
+                        />
+                      </div>
+                      <div class="col-2" style="padding-top: 38px;">
+                        <label class="switch">
+                          <input type="checkbox" id="master" value="true" onclick="valorMaster()" class="switch-input" />
+                          <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                          </span>
+                          <span class="switch-label">Is Master</span>
+                        </label>
+                      </div>
+                      <div class="col-2" style="padding-top: 38px;">
+                        <label class="switch">
+                          <input type="checkbox" id="active" value="true" onclick="valorActive()" class="switch-input" />
+                          <span class="switch-toggle-slider">
+                            <span class="switch-on"></span>
+                            <span class="switch-off"></span>
+                          </span>
+                          <span class="switch-label">Is Active</span>
+                        </label>
+                      </div>
+                      
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserStatus">Phone</label>
+                        <input
+                        style="height: 60px;"
+                          type="text"
+                          id="phone"
+                          name="modalEditUserEmail"
+                          class="form-control"
+                        />
+                      </div>
+
+                      <div class="col-md-6">
+                        <label class="form-label" for="modalEditUserCountry">Role</label>
+                        <select
+                          style="height: 60px;"
+                          id="role"
+                          name="modalEditUserCountry"
+                          class="select2 form-select"
+                          data-allow-clear="true">
+                          <option value="bb36975f-af12-4e4e-9a2d-64393d3cdcca">Developer</option>
+                        </select>
+                      </div>
+                      
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary me-sm-3 me-1" data-bs-dismiss="modal" aria-label="Close" onclick="save()">Save Changes</button>
+                        <button style="border: 1px solid;"
                           type="reset"
                           class="btn btn-label-secondary"
                           data-bs-dismiss="modal"
-                          aria-label="Close">
+                          aria-label="Close"
+                          onclick="vaciar()"
+                          >
                           Cancel
                         </button>
                       </div>
@@ -631,6 +462,34 @@
                   </div>
                 </div>
               </div>
+            </div>
+            <div class="modal fade" id="detailUser" tabindex="-1" aria-hidden="true">
+              <div class="modal-dialog modal-lg modal-simple modal-edit-user" style="max-width: 80%;">
+                <div class="modal-content">
+                  <div class="modal-body" id="view">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal fade" id="confirmModal" tabindex="-1" role="dialog" aria-labelledby="confirmModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Delete</h5>
+                  </div>
+                  <div class="modal-body">
+                    Are you sure you want to delete this user ?
+                  </div>
+                  <div class="modal-footer">
+                    <button style="border: 1px solid;" type="reset" class="btn btn-label-secondary" data-bs-dismiss="modal" aria-label="Close"> Close </button>
+                    <button type="submit" class="btn btn-primary me-sm-3 me-1" data-bs-dismiss="modal" aria-label="Close" onclick="eliminar()">confirm</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row justify-content-center" id="message">
+              
             </div>
             <!-- Footer -->
             <footer class="content-footer footer bg-footer-theme">
@@ -658,6 +517,533 @@
     </div>
     <!-- / Layout wrapper -->
 
+    <script>
+      // document.getElementById('location').value = local
+      let urlPosition = 'https://t101api.azurewebsites.net/Company/CompanyPosition/getAll'
+      let urlCompany = 'https://t101api.azurewebsites.net/Company/getAll'
+      let url = 'https://t101api.azurewebsites.net/User/getAll'
+      let gender = ''
+      let allUser = null
+      let isEdit = false
+      let dataEdit = null
+      let master = false
+      let active = false
+      let selectedFileBase64 = null
+      let dataError = null
+
+      mostrarSelectRole()
+      
+        fetch(url, {
+          headers: {
+            "Content-Type": "application/json",
+            'access-control-allow-origin': '*',
+            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+            'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+          },
+          })
+          .then(response => response.json())
+          .then(data => mostrarData(data))
+          .catch(error => console.log(error))
+
+        fetch(urlPosition, {
+          headers: {
+            "Content-Type": "application/json",
+            'access-control-allow-origin': '*',
+            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+            'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+          },
+          })
+          .then(response => response.json())
+          .then(dataPosition => cargarSelectPosition(dataPosition))
+          .catch(error => console.log(error))
+
+        fetch(urlCompany, {
+          headers: {
+            "Content-Type": "application/json",
+            'access-control-allow-origin': '*',
+            'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+            'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+          },
+          })
+          .then(response => response.json())
+          .then(dataCompany => cargarSelectCompany(dataCompany))
+          .catch(error => console.log(error))
+
+          function convertFileToBase64 (file) {
+            const reader = new FileReader()
+
+            reader.onload = () => {
+              selectedFileBase64 = reader.result.split(';base64,')[1]
+            }
+
+            reader.readAsDataURL(file)
+          }
+
+          function mostrar(){
+            var archivo = document.getElementById("file").files[0];
+            var reader = new FileReader();
+            if (file) {
+              reader.readAsDataURL(archivo );
+              reader.onloadend = function () {
+                document.getElementById("img").src = reader.result;
+              }
+              console.log(reader)              
+              console.log(reader.result)
+            }
+          }
+
+          function valorGender(data)
+          {
+            gender = data
+          }
+
+          function valorMaster()
+          {
+            master = !master
+            mostrarSelectRole()
+          }
+
+          function valorActive()
+          {
+            active = !active
+          }
+
+          function mostrarSelectRole()
+          {
+            fetch('https://t101api.azurewebsites.net/Role/getAll', {
+            headers: {
+              "Content-Type": "application/json",
+              'access-control-allow-origin': '*',
+              'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+              'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+            },
+            })
+            .then(response => response.json())
+            .then(dataPosition => cargarSelectRole(dataPosition))
+            .catch(error => console.log(error))
+          }
+
+          function cargar() {
+            fetch('https://t101api.azurewebsites.net/User/getAll', {
+              headers: {
+                "Content-Type": "application/json",
+                'access-control-allow-origin': '*',
+                'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+              },
+              })
+              .then(response => response.json())
+              .then(data => mostrarData(data))
+              .catch(error => console.log(error))
+          }
+
+          function vaciar() {
+            isEdit = false
+            // document.getElementById("add-new").click()
+            document.getElementById("email").value = ''
+            document.getElementById("company").value = ''
+            document.getElementById("position").value = ''
+            document.getElementById("name").value = ''
+            document.getElementById("last").value = ''
+            // document.getElementById("gender").value = ''
+            // document.getElementById("admin").value = ''
+            // document.getElementById("master").value = ''
+            document.getElementById("birthdate").value = ''
+            document.getElementById("phone").value = ''
+          }
+
+          function editar(id){
+            getPhoto(id)
+            isEdit = true
+            dataEdit = allUser[id]
+            document.getElementById("add-new").click()
+            document.getElementById("email").value = allUser[id].email
+            document.getElementById("company").value = allUser[id].company.id
+            document.getElementById("position").value = allUser[id].companyPosition.id
+            document.getElementById("name").value = allUser[id].firstName
+            document.getElementById("last").value = allUser[id].lastName
+            if (allUser[id].gender.genderType === 'Female') {
+              document.forms["formUser"]["female"].checked=true;
+              gender = 'Female'              
+            } 
+            if (allUser[id].gender.genderType === 'Male') {
+              document.forms["formUser"]["male"].checked=true;
+              gender = 'Male'              
+            }
+            if (allUser[id].isAdmin) {
+              document.getElementById("master").checked = true
+              master = true
+            }
+            if (allUser[id].isActive) {
+              document.getElementById("active").checked = true          
+            }
+            let yourDate = new Date(allUser[id].birthdate)
+            yourDate = yourDate.toISOString().split('T')[0]
+            console.log(yourDate)
+            document.getElementById("birthdate").value = yourDate
+            document.getElementById("phone").value = allUser[id].phone
+            document.getElementById("last").value = allUser[id].userRole.id
+          }
+
+          function save(){
+            console.log(gender)
+            let data = {
+                    "email": document.getElementById("email").value,
+                    "firstName": document.getElementById("name").value,
+                    "lastName": document.getElementById("last").value,
+                    "roleId": document.getElementById("role").value,
+                    "isActive": active,
+                    "isAdmin": master,
+                    "companyId": document.getElementById("company").value,
+                    "companyPositionId": document.getElementById("position").value,
+                    "phone": document.getElementById("phone").value,
+                    "birthday": document.getElementById('birthdate').value,
+                    "gender": gender,
+                    "photo": "string"
+                  }
+            if (isEdit) {
+              let urlDescription = 'https://t101api.azurewebsites.net/User/update/' + dataEdit.id
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "PUT",
+                body: JSON.stringify(data),
+                })
+                .then(response => {response.json()
+                dataError = response.status})
+                .catch((error) => console.error("Error:", error))
+                .then(response => {
+                  console.log(dataError);
+                  console.log(response);
+                  if (dataError !== null && dataError > 300 ) {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-danger"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold">Error</div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                           ${response.message}
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body	
+                    }
+                    else {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-success"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold"></div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                          User Created
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body
+                    }
+                  vaciar()
+                  cargar()
+              })
+            } else {
+              let urlDescription = 'https://t101api.azurewebsites.net/User/create'
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "POST",
+                body: JSON.stringify(data),
+                })
+                .then(response => {response.json()
+                dataError = response.status})
+                .catch((error) => console.error("Error:", error))
+                .then(response => {
+                  console.log(dataError);
+                  if (typeof response !== 'string') {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-danger"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold">Error</div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                           ${response.message}
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body	
+                    }
+                    else {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-success"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold"></div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                          User Created
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body
+                    }
+                  vaciar()
+                  cargar()
+                })
+            }
+          }
+
+          function eliminar(){
+              let urlDescription = 'https://t101api.azurewebsites.net/User/delete/' + dataEdit.id
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                method: "DELETE",
+                body: null,
+                })
+                .then(response => {response.json()
+                dataError = response.status})
+                .then(response => {
+                  console.log(dataError);
+                  if (dataError !== null && dataError > 300 ) {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-danger"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold">Error</div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                           ${response.message}
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body	
+                    }
+                    else {
+                      let body = ''
+                        body += `
+                        <div
+                         class="bs-toast toast fade show bg-success"
+                         role="alert"
+                         aria-live="assertive"
+                         aria-atomic="true"
+                       >
+                         <div class="toast-header">
+                           <i class="bx bx-bell me-2"></i>
+                           <div class="me-auto fw-semibold"></div>
+                           <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                         </div>
+                         <div class="toast-body">
+                          User Deleted
+                         </div>
+                       </div>
+                        `
+                      document.getElementById('message').innerHTML = body
+                    }
+                    vaciar()
+                    cargar()
+                })
+          }
+
+          function selecItem(id){
+            dataEdit = allUser[id]
+          }
+
+          function getPhoto(id){
+              let urlDescription = 'https://t101api.azurewebsites.net/User/getPhoto/' + allUser[id].id
+              fetch(urlDescription, {
+                headers: {
+                  "Content-Type": "application/json",
+                  'access-control-allow-origin': '*',
+                  'Authorization': 'Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im1ham9Ac3RyaWFuby5pbyIsInN1YiI6ImMzZDU0YzczLTA4MWYtNDg3OC1iOGZiLWU5ZTllOTY0MDJjYiIsIm5iZiI6MTcxNjk1NTc2NCwiZXhwIjoxNzE2OTU2MzY0LCJpYXQiOjE3MTY5NTU3NjQsImlzcyI6Iklzc3VlciIsImF1ZCI6IkF1ZGllbmNlIn0.M3s8ZAOepA78chpAUXzBaSx2cwXkiMBEBbv3tYfkoMshnHGenlTbFLa9BkESOj-K6QvZbd8hx880rMSlfYLh3A',
+                  'api_key': 'c8b129c2e8c53de7adc8e2d1ede8d5d3'
+                },
+                body: null,
+                })
+                .then(response => {response.json()
+                dataError = response.status})
+                .then(response => {
+                  console.log(response);
+                })
+          }
+
+          const mostrarData = (data) => {
+            allUser = data
+            let body = ''
+            // let length = data.length > 10 ? 10 : data.length
+            for (let i = 0; i < allUser.length; i++) {
+              allUser[i].order = i
+              body += `
+                          <tr>
+                            <td>
+                              <ul class="list-unstyled users-list m-0 avatar-group d-flex align-items-center">
+                                <li
+                                  data-bs-toggle="tooltip"
+                                  data-popup="tooltip-custom"
+                                  data-bs-placement="top"
+                                  class="avatar avatar-xs pull-up"
+                                  title="Lilian Fuller"
+                                >
+                                  <img src="../assets/img/avatars/6.png" alt="Avatar" class="rounded-circle" />
+                                </li>
+                              </ul>
+                            </td>
+                            <td><a style="cursor:pointer;" data-bs-target="#detailUser" data-bs-toggle="modal" onclick="verDetalle(${allUser[i].order})">${allUser[i].email}</a></td>
+                            <td>${allUser[i].company.legalName}</td>
+                            <td>${allUser[i].userRole.roleName}</td>
+                            <td>${allUser[i].birthdate}</td>
+                            <td>${allUser[i].gender.genderType}</td>
+                            <td>${allUser[i].phone}</td>
+                            ${allUser[i].isActive ? '<td><span class="badge bg-label-success ">ACTIVE</span></td>' : '<td><span class="badge bg-label-warning ">INACTIVE</span></td>'}
+                            <td>
+                              <a style="cursor:pointer;" onclick="editar(${allUser[i].order})"><i class="bx bx-edit"></i></a><a style="cursor:pointer;" data-bs-target="#confirmModal" data-bs-toggle="modal" onclick="selecItem(${allUser[i].order})"><i class="bx bx-trash "></i></a>
+                            </td>
+                          </tr>
+              `
+            }
+
+            document.getElementById('dataCompany').innerHTML = body
+          }
+
+          function verDetalle(id) 
+          {
+            let data = allUser[id]
+            let body = ''
+            body += `
+            <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+                    <div class="mb-4">
+                      <h3 style="color: #1c46a3; font-weight: 500;">View User Details</h3>
+                    </div>
+                    <div class="row p-4">
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserName"><b>Email / Username:</b> ${' ' + data.email}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserCountry"><b>Company:</b> ${' ' + data.company.legalName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>First Name:</b> ${' ' + data.firstName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditTaxID"><b>Last Name:</b> ${' ' + data.lastName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserCountry"><b>Position:</b> ${' ' + data.companyPosition.companyPositionName}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Gender:</b> ${' ' + data.gender.genderType}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Birthday:</b> ${' ' + data.birthdate}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Is Master:</b> ${' ' + data.isAdmin ? 'Yes' : 'No'}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Is Active:</b> ${' ' + data.isActive ? 'Yes' : 'No'}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserStatus"><b>Phone:</b> ${' ' + data.phone}</label>
+                      </div>
+                      <div class="col-6">
+                        <label class="form-label" for="modalEditUserCountry"><b>Role:</b> ${' ' + data.userRole.roleName}</label>
+                      </div>
+                      
+                      <div class="col-12">
+                        <button style="border: 1px solid;"
+                          type="reset"
+                          class="btn btn-label-secondary"
+                          data-bs-dismiss="modal"
+                          aria-label="Close"
+                          >
+                          Close
+                        </button>
+                      </div>
+                    </div>
+              `
+            document.getElementById('view').innerHTML = body
+          }
+
+          const cargarSelectRole = (data) => {
+            let body = '<option></option>'
+            for (let i = 0; i < data.length; i++) {
+              body += `
+              <option value="${data[i].id}">${data[i].roleName}</option>
+              `
+            }
+
+            document.getElementById('role').innerHTML = body
+          }
+          
+          const cargarSelectCompany = (data) => {
+            let body = '<option></option>'
+            for (let i = 0; i < data.length; i++) {
+              body += `
+              <option value="${data[i].id}">${data[i].legalName}</option>
+              `
+            }
+
+            document.getElementById('company').innerHTML = body
+          }
+          
+          const cargarSelectPosition = (data) => {
+            let body = '<option></option>'
+            for (let i = 0; i < data.length; i++) {
+              body += `
+              <option value="${data[i].id}">${data[i].companyPositionName}</option>
+              `
+            }
+
+            document.getElementById('position').innerHTML = body
+          }
+    </script>
     
 
     <!-- Core JS -->
